@@ -1,6 +1,9 @@
 package com.company;
 
+import com.company.animals.Animal;
+import com.company.animals.Human;
 import com.company.devices.Car;
+import com.company.devices.Diesel;
 import com.company.devices.Phone;
 
 public class Main {
@@ -30,11 +33,18 @@ public class Main {
 
         onePlus.turnOn();
 
-        Car fiat = new Car();
+        Car fiat = new Diesel();
         fiat.engineSize = 1.9;
-        fiat.fuelType = "disel";
+        fiat.fuelType = "diesel";
         fiat.producer = "Fiat";
         fiat.model = "Bravo";
+
+        Human seller = new Human(1000.0);
+        seller.car = fiat;
+        seller.phone = iPhone6;
+        Human buyer = new Human(1500.0);
+        fiat.sell(seller, buyer,700.0);
+        iPhone6.sell(seller, buyer, 5.0);
 
         System.out.println(iPhone6.os);
         System.out.println(iPhone6.screenSize);
