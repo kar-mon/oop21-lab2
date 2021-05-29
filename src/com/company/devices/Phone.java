@@ -1,6 +1,6 @@
 package com.company.devices;
 
-import com.company.Human;
+import com.company.animals.Human;
 
 public class Phone extends Device {
     public final Double screenSize;
@@ -23,8 +23,18 @@ public class Phone extends Device {
         System.out.println("Phone is turned on");
     }
 
+
     @Override
     public boolean sell(Human seller, Human buyer, Double price) {
-        return false;
+        if (!(seller.phone == this)) {
+            return false;}
+        if (!(buyer.cash > price)) {
+            return false; }
+        seller.phone = null;
+        buyer.phone = this;
+        seller.cash += price;
+        buyer.cash -= price;
+        System.out.println("the device has been sold");
+            return true;
+        }
     }
-}

@@ -1,13 +1,13 @@
-package com.company;
+package com.company.animals;
 
-public class Animal {
+public class Animal implements Feadable {
     final static Double DEFAULT_DOG_WEIGHT = 6.0;
     public String name;
     final static Double DEFAULT_CAT_WEIGHT = 1.0;
     final static Double DEFAULT_ELEPHANT_WEIGHT = 2000.0;
     final static Double DEFAULT_WEIGHT = 0.5;
     public final String species;
-    private Double weight;
+    protected Double weight;
 
     public Animal(String species) {
         this.species = species;
@@ -27,16 +27,21 @@ public class Animal {
         }
 
     }
+    @Override
+    public boolean feed() {
+        return true;
+    }
 
     void printWeight() {
         System.out.println(weight);
     }
 
-    void feed(Double foodWeight) {
+    @Override
+    public boolean feed(Double foodWeight) {
         weight += foodWeight;
         System.out.println("thx for food, bro");
         System.out.println("my weight is now " + weight);
-    }
+    return true;}
 
     String returnSpeciesAndName() {
         return species + " " + name;

@@ -1,20 +1,21 @@
-package com.company;
+package com.company.animals;
 
 import com.company.devices.Car;
 import com.company.devices.Phone;
 
 public class Human extends Animal {
-    String firstName;
-    String lastName;
-    Animal pet;
-    Phone phone;
-    Car car;
+    public String firstName;
+    public String lastName;
+    public Animal pet;
+    public Phone phone;
+    public Car car;
+    public Double cash = 0.0;
 
     public final static String HUMAN_SPECIE = "homo sapiens";
 
     private Double salary;
 
-    Human(Double salary) {
+    public Human(Double salary) {
         super(HUMAN_SPECIE);
         this.setSalary(salary);
     }
@@ -34,6 +35,8 @@ public class Human extends Animal {
             System.out.println("NOBODY WILL PAY FOR WORKING");
             this.salary = 0.0;
         }
+        this.cash = salary;
     }
+
 
 }
