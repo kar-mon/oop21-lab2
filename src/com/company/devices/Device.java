@@ -13,6 +13,10 @@ public abstract class Device implements Sellable {
         this.yearOfProduction = yearOfProduction;
     }
 
+    public String toString(){
+        return producer +" "+ model +" "+yearOfProduction;
+    };
+
     public abstract void turnOn();
 
 }

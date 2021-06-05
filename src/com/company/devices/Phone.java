@@ -13,10 +13,6 @@ public class Phone extends Device {
         this.os = os;
     }
 
-    public String toString() {
-        return "producer: " + this.producer
-                + " model: " + this.model;
-    }
 
     @Override
     public void turnOn() {
